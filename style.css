@@ -1,0 +1,282 @@
+/* ================= Global Reset ================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;             /* Ensure body fills viewport */
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: #fdfaf6;
+    color: #4b4b4b;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ================= Music Button ================= */
+#musicBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f4eee9;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#musicBtn:hover {
+    background: #bfa181;
+    color: white;
+}
+
+/* ================= Flower Canvas ================= */
+#flowerCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ================= Hero Section ================= */
+.hero {
+    height: 100vh;                 /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(253,250,246,0.85), rgba(253,250,246,0.9));
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    padding: 50px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* ================= Couple Names ================= */
+.invitation-text {
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #7a6f66;
+}
+
+.couple-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #bfa181;
+    margin-bottom: 20px;
+}
+
+/* ================= Date Box ================= */
+.date-box {
+    position: relative;
+    width: 320px;
+    margin: 25px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.date-box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #bfa181;
+    transition: width 0.4s ease;
+}
+
+.date-box:hover::after {
+    width: 100%;
+}
+
+.date-preview {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: #bfa181;
+    transition: opacity 0.4s ease;
+}
+
+.date-full {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+.date-box:hover .date-full {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.date-box:hover .date-preview {
+    opacity: 0;
+}
+
+/* ================= Countdown & Button ================= */
+#countdown {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #6e6259;
+}
+
+.openBtn {
+    margin-top: 30px;
+    padding: 12px 35px;
+    border: 1px solid #bfa181;
+    background: transparent;
+    color: #bfa181;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.openBtn:hover {
+    background: #bfa181;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ================= Section Titles ================= */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 60px 0 40px;
+    color: #bfa181;
+}
+
+/* ================= Timeline / Schedule Cards ================= */
+.timeline-item, .schedule-grid .card {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-item::before, .schedule-grid .card::before {
+    content: attr(data-closed);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #bfa181;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.timeline-item.open::before, .schedule-grid .card.open::before {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+}
+
+.timeline-item p, .schedule-grid .card p {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.timeline-item.open p, .schedule-grid .card.open p {
+    opacity: 1;
+}
+
+/* ================= Schedule Grid ================= */
+.schedule-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ================= Gallery ================= */
+.photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.photos img {
+    width: 300px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= RSVP & Gift ================= */
+.rsvp-gift-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.rsvpBtn, .giftBtn {
+    padding: 14px 40px;
+    border: 1px solid #bfa181;
+    color: #bfa181;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+.rsvpBtn:hover, .giftBtn:hover {
+    background: #bfa181;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(191,161,129,0.3);
+}
+
+/* ================= Footer ================= */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7a6f66;
+    font-size: 14px;
+}

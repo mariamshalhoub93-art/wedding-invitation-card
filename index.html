@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Amir & Sally | Wedding Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Music (hidden) -->
+  <audio id="bgMusic" autoplay loop>
+      <source src="https://wwfm.streamguys1.com/live-mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+
+  <!-- Floating music button -->
+  <button id="musicBtn" aria-label="Toggle Music">♪</button>
+
+  <!-- Floating flower canvas -->
+  <canvas id="flowerCanvas"></canvas>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="invitation-text">Together with their families</p>
+      <h1 class="couple-names">Amir & Sally</h1>
+
+      <!-- Interactive Date Box -->
+      <div class="date-box">
+        <div class="date-preview">Save the Date</div>
+        <div class="date-full">
+          <p class="wedding-day">Saturday</p>
+          <p class="wedding-date">June 20, 2026</p>
+          <p class="wedding-time">at 7:00 in the evening</p>
+        </div>
+      </div>
+
+      <div id="countdown"></div>
+      <button class="openBtn" onclick="scrollToSection('.love-story')">View Celebration Details</button>
+    </div>
+  </section>
+
+  <!-- LOVE STORY CARDS -->
+  <section class="love-story">
+    <h2 class="section-title">Our Love Story</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-closed="First Meeting">
+        <p>We first met at university and instantly connected in 2020.</p>
+      </div>
+      <div class="timeline-item" data-closed="Falling in love">
+        <p>There is no date for this because it is still happening</p>
+      </div>
+      <div class="timeline-item" data-closed="The Proposal">
+        <p>The proposal – the happiest moment of our lives in 2023.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE CARDS -->
+  <section class="schedule">
+    <h2 class="section-title">Wedding Day Schedule</h2>
+    <div class="schedule-grid">
+      <div class="card" data-closed="Ceremony"><p>7:00 PM - 8:00 PM</p></div>
+      <div class="card" data-closed="Cocktail"><p>8:00 PM - 9:00 PM</p></div>
+      <div class="card" data-closed="Dinner"><p>9:00 PM - 11:00 PM</p></div>
+      <div class="card" data-closed="Dance"><p>11:00 PM - 1:00 AM</p></div>
+    </div>
+  </section>
+
+  <!-- WEDDING RINGS GALLERY -->
+  <section class="gallery">
+    <h2 class="section-title">Our Moments</h2>
+    <div class="photos">
+      <img src="images/image1.jpg" alt="rings">
+      <img src="images/image2.jpg" alt="cheek kiss">
+      <img src="images/image 3.jpg" alt="proposal">
+    </div>
+  </section>
+
+  <!-- RSVP & GIFT -->
+  <section class="rsvp-gift">
+    <h2 class="section-title">Join Us</h2>
+    <div class="rsvp-gift-grid">
+      <a class="rsvpBtn" href="https://wa.me/961XXXXXXXX?text=We%20are%20happy%20to%20celebrate%20with%20you" target="_blank">Confirm Attendance</a>
+      <a class="giftBtn" href="#" target="_blank">Gift Registry</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>With love, Amir & Sally 🤍</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
